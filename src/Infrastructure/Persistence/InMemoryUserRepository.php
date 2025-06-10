@@ -7,11 +7,17 @@ use Richardrodriguez21\BookingApp\Users\Domain\UserRepository;
 use Richardrodriguez21\BookingApp\Users\Domain\User;
 use Richardrodriguez21\BookingApp\Users\Domain\UserId;
 use Richardrodriguez21\BookingApp\Shared\ValueObject\Email;
+use Faker\Factory as Faker;  
 
 final class InMemoryUserRepository implements UserRepository
 {
     /** @var array<string, User> */
     private array $users = [];
+   
+    public function __construct()
+    {
+        $this->build();
+    }
 
     public function findById(UserId $id): ?User
     {
@@ -36,5 +42,14 @@ final class InMemoryUserRepository implements UserRepository
     public function findAll(): array
     {
         return array_values($this->users);
+    }
+    
+
+    private function build(){
+        $faker = Faker::create();
+
+        foreach (range(1, 10) as $number) {
+            $this->save(new User(UserId::generate(), new Email($faker->email())));
+        }
     }
 }
