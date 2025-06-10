@@ -22,6 +22,8 @@ RUN apk update \
     && docker-php-ext-enable --ini-name 05-opcache.ini opcache xdebug amqp \
     && apk del .phpize-deps
 
+COPY ./php.ini "$PHP_INI_DIR/php.ini"
+
 # Install and update composer
 RUN curl https://getcomposer.org/composer.phar -o /usr/bin/composer && chmod +x /usr/bin/composer
 RUN composer self-update
