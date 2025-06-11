@@ -8,5 +8,6 @@ interface HotelRepository
 {
     public function findById(HotelId $id): ?Hotel;
     public function save(Hotel $hotel): void;
+    public function findAll(): array;
 }
 
