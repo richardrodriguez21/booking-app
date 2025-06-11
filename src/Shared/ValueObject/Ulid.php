@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 namespace Richardrodriguez21\BookingApp\Shared\ValueObject;
-use Symfony\Component\Uid\Uuid as SymfonyUuid;
+use Symfony\Component\Uid\Ulid as SymfonyUlid;
 
 
-abstract class Uuid
+abstract class Ulid
 {
     private string $value;
 
@@ -21,7 +21,7 @@ abstract class Uuid
     }
 
     final public static function generate(): self{
-        return new static(SymfonyUuid::v7()->toString());
+        return new static(SymfonyUlid::generate());
     }
 
     public function __toString(): string
@@ -36,7 +36,7 @@ abstract class Uuid
 
      public function isValid(string $value): void
     {
-        if (!SymfonyUuid::isValid($value)) {
+        if (!SymfonyUlid::isValid($value)) {
             throw new \InvalidArgumentException('Invalid UUID');
         }
     }
