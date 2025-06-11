@@ -13,12 +13,12 @@ final class Booking
 {
     private BookingId $id;
     private HotelId $hotelId;
-    private string $roomsQty;
+    private int $roomsQty;
     private string $email;
     private string $name;
     private string $lastName;
 
-    public function __construct(BookingId $id, HotelId $hotelId, string $roomsQty, string $email, string $name, string $lastName)
+    public function __construct(BookingId $id, HotelId $hotelId, int $roomsQty, string $email, string $name, string $lastName)
     {
         $this->id = $id;
         $this->hotelId = $hotelId;
@@ -38,7 +38,7 @@ final class Booking
         return $this->hotelId;
     }
 
-    public function getRoomsQty(): string
+    public function getRoomsQty(): int
     {
         return $this->roomsQty;
     }
