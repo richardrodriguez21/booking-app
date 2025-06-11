@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Richardrodriguez21\BookingApp\Infrastructure\Persistence;
+namespace Richardrodriguez21\BookingApp\Users\Infrastructure\Persistence;
 use Richardrodriguez21\BookingApp\Users\Domain\UserRepository;
 use Richardrodriguez21\BookingApp\Users\Domain\User;
 use Richardrodriguez21\BookingApp\Users\Domain\UserId;

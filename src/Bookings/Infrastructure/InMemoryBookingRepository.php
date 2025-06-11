@@ -8,9 +8,16 @@ use Richardrodriguez21\BookingApp\Bookings\Domain\Booking;
 use Richardrodriguez21\BookingApp\Bookings\Domain\BookingId;
 use Richardrodriguez21\BookingApp\Bookings\Domain\BookingRepository;
 use Richardrodriguez21\BookingApp\Hotels\Infrastructure\InMemoryHotelRepository;
+use Faker\Factory as Faker;
+
 final class InMemoryBookingRepository implements BookingRepository
 {
     private array $bookings = [];
+
+    public function __construct()
+    {
+        $this->build();
+    }
 
     public function save(Booking $booking): void
     {
@@ -30,10 +37,12 @@ final class InMemoryBookingRepository implements BookingRepository
 
     private function build(): void
     {
+
+        $faker = Faker::create();
        // load hotels from InMemoryHotelRepository and radomly generate 100 bookings in total
        $hotels = (new InMemoryHotelRepository())->findAll();
        foreach ($hotels as $hotel) {
-        $this->bookings[] = new Booking( BookingId::generate(), $hotel->getId(), rand(1, 10), 'test@test.com', 'John', 'Doe');
+        $this->bookings[] = new Booking( BookingId::generate(), $hotel->getId(), rand(1, 10), $faker->email(), $faker->name(), $faker->lastName());
        }
     }
     
