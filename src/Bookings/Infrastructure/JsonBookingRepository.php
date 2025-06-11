@@ -9,16 +9,19 @@ use Richardrodriguez21\BookingApp\Bookings\Domain\Booking;
 use Richardrodriguez21\BookingApp\Bookings\Domain\BookingId;
 use Richardrodriguez21\BookingApp\Hotels\Domain\HotelId;
 use Richardrodriguez21\BookingApp\Hotels\Infrastructure\InMemoryHotelRepository;
+use Richardrodriguez21\BookingApp\Bookings\Domain\BookingRepository;
+
+
 use Faker\Factory as Faker;
 
 
-class JsonBookingRepository
+class JsonBookingRepository implements BookingRepository
 {
     private string $filePath;
 
-    public function __construct(string $filePath)
+    public function __construct(string $dataDir)
     {
-        $this->filePath = $filePath . '/bookings.json';
+        $this->filePath = $dataDir . '/bookings.json';
 
         if (!file_exists($this->filePath)) {
             file_put_contents($this->filePath, json_encode([]));
@@ -64,6 +67,14 @@ class JsonBookingRepository
         }, $bookings);
 
         file_put_contents($this->filePath, json_encode($data, JSON_PRETTY_PRINT));
+    }
+
+    public function findByHotel(HotelId $hotelId): array
+    {
+        $bookings = $this->findAll();
+        return array_filter($bookings, function (Booking $b) use ($hotelId) {
+            return $b->getHotelId() === $hotelId;
+        });
     }
 
     private function build(): void
