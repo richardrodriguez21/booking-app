@@ -24,6 +24,6 @@ final class GetAllHotelsController extends AbstractController
                 'name' => $hotel->getName(),
             ];
         }
-        return $this->json($data);
+        return $this->json(['data' => $data]);
     }
 }

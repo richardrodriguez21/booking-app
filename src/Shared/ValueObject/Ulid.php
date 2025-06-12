@@ -37,7 +37,7 @@ abstract class Ulid
      public function isValid(string $value): void
     {
         if (!SymfonyUlid::isValid($value)) {
-            throw new \InvalidArgumentException('Invalid UUID');
+            throw new \InvalidArgumentException('Invalid ULID');
         }
     }
     

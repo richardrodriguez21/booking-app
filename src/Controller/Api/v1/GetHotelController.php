@@ -19,6 +19,6 @@ final class GetHotelController extends AbstractController
     public function __invoke(Request $request): JsonResponse
     {
         $hotel = $this->hotelFinderById->execute(new HotelId($request->get('id')));
-        return $this->json($hotel);
+        return $this->json(['data' => $hotel]);
     }
 }
