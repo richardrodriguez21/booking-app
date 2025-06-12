@@ -6,7 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Richardrodriguez21\BookingApp\Hotels\Application\AllHotelsFinder;
 use Symfony\Component\Routing\Annotation\Route;
-class GetAllHotelsController extends AbstractController
+
+final class GetAllHotelsController extends AbstractController
 {
 
     public function __construct(private AllHotelsFinder $allHotelsFinder)

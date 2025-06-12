@@ -35,16 +35,16 @@ final class InMemoryHotelRepository implements HotelRepository
     private function build(): void
     { 
         $this->hotels = [
-            new Hotel(new HotelId('01JXGEVEACMHJQ2X45GS31R0W7'), 'West Chandler Hotel', 'Chandler', 'Arizona', 10),
-            new Hotel(new HotelId('01JXGEVEAF1XWV4ARKD0DERFCC'), 'Aureliaport Hotel', 'Aurelia', 'California', 10),
-            new Hotel(new HotelId('01JXGEVEAKZDTDQ9WP4K6TVM3H'), 'Wizatown Hotel', 'Wiza', 'Texas', 10),
-            new Hotel(new HotelId('01JXGEVEAMMSA01439PNN3CW81'), 'North Leta Hotel', 'Leta', 'North Carolina', 10),
-            new Hotel(new HotelId('01JXGEVEAQGJYYYNR2D9KGH9TZ'), 'Jaysonville Hotel', 'Jayson', 'Texas', 10),   
-            new Hotel(new HotelId('01JXGEVEASJ5RD1TED0XYYV7TF'), 'New Oswaldo Hotel', 'Oswaldo', 'Texas', 10),
-            new Hotel(new HotelId('01JXGEVEAVAB2N56SBX9RNNC6C'), 'East Tyrique Hotel', 'Tyrique', 'Texas', 10),
-            new Hotel(new HotelId('01JXGEVEAVAB2N56SBX9RNNC6D'), 'Port Arianeside Hotel', 'Arianeside', 'Texas', 10),
-            new Hotel(new HotelId('01JXGEVEAZK4GEF2N7Z1R71ANM'), 'Nicholeport Hotel', 'Nichole', 'Texas', 10),
-            new Hotel(new HotelId('01JXGEVEB0CQMZXJFTD2P4BQVJ'), 'Sigurdfort Hotel', 'Sigurd', 'Texas', 10),
+            "01JXGEVEACMHJQ2X45GS31R0W7" => new Hotel(new HotelId('01JXGEVEACMHJQ2X45GS31R0W7'), 'West Chandler Hotel', 'Chandler', 'Arizona', 10),
+            "01JXGEVEAF1XWV4ARKD0DERFCC" => new Hotel(new HotelId('01JXGEVEAF1XWV4ARKD0DERFCC'), 'Aureliaport Hotel', 'Aurelia', 'California', 10),
+            "01JXGEVEAKZDTDQ9WP4K6TVM3H" => new Hotel(new HotelId('01JXGEVEAKZDTDQ9WP4K6TVM3H'), 'Wizatown Hotel', 'Wiza', 'Texas', 10),
+            "01JXGEVEAMMSA01439PNN3CW81" => new Hotel(new HotelId('01JXGEVEAMMSA01439PNN3CW81'), 'North Leta Hotel', 'Leta', 'North Carolina', 10),
+            "01JXGEVEAQGJYYYNR2D9KGH9TZ" => new Hotel(new HotelId('01JXGEVEAQGJYYYNR2D9KGH9TZ'), 'Jaysonville Hotel', 'Jayson', 'Texas', 10),   
+            "01JXGEVEASJ5RD1TED0XYYV7TF" => new Hotel(new HotelId('01JXGEVEASJ5RD1TED0XYYV7TF'), 'New Oswaldo Hotel', 'Oswaldo', 'Texas', 10),
+            "01JXGEVEAVAB2N56SBX9RNNC6C" => new Hotel(new HotelId('01JXGEVEAVAB2N56SBX9RNNC6C'), 'East Tyrique Hotel', 'Tyrique', 'Texas', 10),
+            "01JXGEVEAVAB2N56SBX9RNNC6D" => new Hotel(new HotelId('01JXGEVEAVAB2N56SBX9RNNC6D'), 'Port Arianeside Hotel', 'Arianeside', 'Texas', 10),
+            "01JXGEVEAZK4GEF2N7Z1R71ANM" => new Hotel(new HotelId('01JXGEVEAZK4GEF2N7Z1R71ANM'), 'Nicholeport Hotel', 'Nichole', 'Texas', 10),
+            "01JXGEVEB0CQMZXJFTD2P4BQVJ" => new Hotel(new HotelId('01JXGEVEB0CQMZXJFTD2P4BQVJ'), 'Sigurdfort Hotel', 'Sigurd', 'Texas', 10),
         ];
     }
 }

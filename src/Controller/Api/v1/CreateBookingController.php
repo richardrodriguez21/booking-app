@@ -8,7 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Richardrodriguez21\BookingApp\Bookings\Application\BookingCreator;
 use Symfony\Component\HttpFoundation\Request;
 
-class CreateBooking extends AbstractController
+
+final class CreateBookingController extends AbstractController
 {
     public function __construct( private BookingCreator $bookingCreator )
     {

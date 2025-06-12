@@ -73,7 +73,7 @@ class JsonBookingRepository implements BookingRepository
     {
         $bookings = $this->findAll();
         return array_filter($bookings, function (Booking $b) use ($hotelId) {
-            return $b->getHotelId() === $hotelId;
+            return $b->getHotelId()->equals($hotelId);
         });
     }
 
