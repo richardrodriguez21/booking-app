@@ -118,5 +118,13 @@
         "email": "markus67@bergnaum.com",
         "name": "Felicita Goodwin",
         "lastName": "Krajcik"
+    },
+    {
+        "id": "01JXK0QB1VGPXS61NFYM8FQYYY",
+        "hotelId": "01JXGEVEAF1XWV4ARKD0DERFCC",
+        "roomsQty": 4,
+        "email": "jhon.doe@test.local",
+        "name": "Jhon",
+        "lastName": "Doe"
     }
 ]

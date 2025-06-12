@@ -33,6 +33,7 @@ start: ## Start the containers
 	cp -n docker-compose.yml.dist docker-compose.yml || true
 	cp -n .env.dist .env || true
 	U_ID=${UID} docker-compose up -d
+	$(MAKE) composer-install
 
 stop: ## Stop the containers
 	U_ID=${UID} docker-compose stop

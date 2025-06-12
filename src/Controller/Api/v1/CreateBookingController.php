@@ -18,7 +18,8 @@ final class CreateBookingController extends AbstractController
     #[Route('/api/v1/bookings', name: 'api_v1_bookings_create', methods: ['POST'])]
     public function __invoke(Request $request): JsonResponse
     {
-        $this->bookingCreator->execute($request->get('hotelId'), $request->get('email'), $request->get('name'), $request->get('lastName'), $request->get('roomsQty'));
+        $body = json_decode($request->getContent(), true);
+        $this->bookingCreator->execute($body['hotelId'], $body['email'], $body['name'], $body['lastName'], (int)$body['roomsQty']);
         return $this->json(['message' => 'Booking created successfully']);
     }
 }

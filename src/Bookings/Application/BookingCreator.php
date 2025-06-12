@@ -16,10 +16,10 @@ final class BookingCreator
         $booking = new Booking(
             BookingId::generate(),
             new HotelId($hotelId),
+            $roomsQty,
             $email,
             $name,
-            $lastName,
-            $roomsQty
+            $lastName
         );
         $this->bookingRepository->save($booking);
     }
