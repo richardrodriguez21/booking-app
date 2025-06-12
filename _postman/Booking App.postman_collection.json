@@ -29,7 +29,7 @@
 			"response": []
 		},
 		{
-			"name": "Get the hotel info and statistics",
+			"name": "Get the hotel info and available rooms",
 			"request": {
 				"method": "GET",
 				"header": [],

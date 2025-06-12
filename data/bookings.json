@@ -134,5 +134,13 @@
         "email": "jhon.doe@test.local",
         "name": "Jhon",
         "lastName": "Doe"
+    },
+    {
+        "id": "01JXK43ZYSWPDBNJWE7HP0PY16",
+        "hotelId": "01JXGEVEAF1XWV4ARKD0DERFCC",
+        "roomsQty": 4,
+        "email": "jhon.doe@test.local",
+        "name": "Jhon",
+        "lastName": "Doe"
     }
 ]
