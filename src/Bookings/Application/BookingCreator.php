@@ -5,7 +5,7 @@ use Richardrodriguez21\BookingApp\Bookings\Domain\BookingRepository;
 use Richardrodriguez21\BookingApp\Bookings\Domain\Booking;  
 use Richardrodriguez21\BookingApp\Bookings\Domain\BookingId;
 use Richardrodriguez21\BookingApp\Hotels\Domain\HotelId;
-
+use Richardrodriguez21\BookingApp\Shared\ValueObject\Email;
 final class BookingCreator
 {
     public function __construct(private BookingRepository $bookingRepository)
@@ -17,7 +17,7 @@ final class BookingCreator
             BookingId::generate(),
             new HotelId($hotelId),
             $roomsQty,
-            $email,
+            new Email($email),
             $name,
             $lastName
         );

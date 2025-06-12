@@ -7,6 +7,7 @@ use Richardrodriguez21\BookingApp\Bookings\Application\BookingCreator;
 use Richardrodriguez21\BookingApp\Bookings\Domain\BookingRepository;
 use Richardrodriguez21\BookingApp\Bookings\Domain\Booking;
 use Richardrodriguez21\BookingApp\Hotels\Domain\HotelId;
+use Richardrodriguez21\BookingApp\Shared\ValueObject\Email;
 
 class BookingCreatorTest extends TestCase
 {
@@ -16,7 +17,7 @@ class BookingCreatorTest extends TestCase
         $bookingsRepository = $this->createMock(BookingRepository::class);
 
         $hotelId = HotelId::generate();
-        $email = 'test@test.com';
+        $email = new Email('test@test.com');   
         $name = 'John';
         $lastName = 'Doe';
         $roomsQty = 2;
@@ -26,7 +27,7 @@ class BookingCreatorTest extends TestCase
             ->with($this->callback(function (Booking $booking) use ($hotelId, $email, $name, $lastName, $roomsQty) {
                 $this->assertInstanceOf(Booking::class, $booking);
                 $this->assertTrue($booking->getHotelId()->equals($hotelId));
-                $this->assertSame($email, $booking->getEmail());
+                $this->assertTrue($booking->getEmail()->equals($email));
                 $this->assertSame($name, $booking->getName());
                 $this->assertSame($lastName, $booking->getLastName());
                 $this->assertSame($roomsQty, $booking->getRoomsQty());

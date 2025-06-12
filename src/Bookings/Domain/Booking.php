@@ -6,7 +6,7 @@ namespace Richardrodriguez21\BookingApp\Bookings\Domain;
 
 use Richardrodriguez21\BookingApp\Bookings\Domain\BookingId;
 use Richardrodriguez21\BookingApp\Hotels\Domain\HotelId;
-
+use Richardrodriguez21\BookingApp\Shared\ValueObject\Email;
 
 
 final class Booking
@@ -14,11 +14,11 @@ final class Booking
     private BookingId $id;
     private HotelId $hotelId;
     private int $roomsQty;
-    private string $email;
+    private Email $email;
     private string $name;
     private string $lastName;
 
-    public function __construct(BookingId $id, HotelId $hotelId, int $roomsQty, string $email, string $name, string $lastName)
+    public function __construct(BookingId $id, HotelId $hotelId, int $roomsQty, Email $email, string $name, string $lastName)
     {
         $this->id = $id;
         $this->hotelId = $hotelId;
@@ -43,7 +43,7 @@ final class Booking
         return $this->roomsQty;
     }
 
-    public function getEmail(): string  
+    public function getEmail(): Email  
     {
         return $this->email;
     }

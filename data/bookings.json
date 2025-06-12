@@ -120,51 +120,11 @@
         "lastName": "Krajcik"
     },
     {
-        "id": "01JXK0QB1VGPXS61NFYM8FQYYY",
+        "id": "01JXK3QK31KN0X0Z6EA665SJ2X",
         "hotelId": "01JXGEVEAF1XWV4ARKD0DERFCC",
         "roomsQty": 4,
         "email": "jhon.doe@test.local",
         "name": "Jhon",
         "lastName": "Doe"
-    },
-    {
-        "id": "01JXK2Y81MPPRA22SXABGQP77T",
-        "hotelId": "01JXGEVEAF1XWV4ARKD0DERFCC",
-        "roomsQty": 4,
-        "email": "jhon.doe@test.local",
-        "name": "Jhon",
-        "lastName": "Doe"
-    },
-    {
-        "id": "01JXK30CE0FCQ0GKFZBBC6ZPHZ",
-        "hotelId": "01JXGEVEAF1XWV4ARKD0DERFCC",
-        "roomsQty": 4,
-        "email": "jhon.doe@test.local",
-        "name": "Jhon",
-        "lastName": "0"
-    },
-    {
-        "id": "01JXK30R0T3TQ0EECRCT0WQ9EZ",
-        "hotelId": "01JXGEVEAF1XWV4ARKD0DERFCC",
-        "roomsQty": 4,
-        "email": "jhon.doe",
-        "name": "Jhon",
-        "lastName": "0"
-    },
-    {
-        "id": "01JXK30W78EBSP0193CNG6KP5S",
-        "hotelId": "01JXGEVEAF1XWV4ARKD0DERFCC",
-        "roomsQty": 4,
-        "email": "jhon.doe",
-        "name": "Jhon",
-        "lastName": "0"
-    },
-    {
-        "id": "01JXK38F336TXEBNMCKRMSPTB1",
-        "hotelId": "01JXGEVEAF1XWV4ARKD0DERFCC",
-        "roomsQty": 4,
-        "email": "jhon.doe",
-        "name": "Jhon",
-        "lastName": "0"
     }
 ]

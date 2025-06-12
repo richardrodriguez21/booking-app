@@ -10,7 +10,7 @@ use Richardrodriguez21\BookingApp\Bookings\Domain\BookingId;
 use Richardrodriguez21\BookingApp\Hotels\Domain\HotelId;
 use Richardrodriguez21\BookingApp\Hotels\Infrastructure\InMemoryHotelRepository;
 use Richardrodriguez21\BookingApp\Bookings\Domain\BookingRepository;
-
+use Richardrodriguez21\BookingApp\Shared\ValueObject\Email;
 
 use Faker\Factory as Faker;
 
@@ -46,7 +46,7 @@ class JsonBookingRepository implements BookingRepository
                 new BookingId($item['id']),
                 new HotelId($item['hotelId']),
                 $item['roomsQty'],
-                $item['email'],
+                new Email($item['email']),
                 $item['name'],
                 $item['lastName']
             );
@@ -60,7 +60,7 @@ class JsonBookingRepository implements BookingRepository
                 'id' => (string) $b->getId(),
                 'hotelId' => (string) $b->getHotelId(),
                 'roomsQty' => $b->getRoomsQty(),
-                'email' => $b->getEmail(),
+                'email' => (string) $b->getEmail(),
                 'name' => $b->getName(),
                 'lastName' => $b->getLastName(),
             ];
@@ -84,7 +84,7 @@ class JsonBookingRepository implements BookingRepository
         $hotels = (new InMemoryHotelRepository())->findAll();
         // generate 15 random bookings  
         for ($i = 0; $i < 15; $i++) {
-            $bookings[] = new Booking( BookingId::generate(), $hotels[array_rand($hotels)]->getId(), rand(1, 10), $faker->email(), $faker->name(), $faker->lastName());
+            $bookings[] = new Booking( BookingId::generate(), $hotels[array_rand($hotels)]->getId(), rand(1, 10), new Email($faker->email()), $faker->name(), $faker->lastName());
         }
         $this->persistAll($bookings);
     }
