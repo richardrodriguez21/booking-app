@@ -14,7 +14,7 @@ final class GetAllHotelsController extends AbstractController
     {}
 
     #[Route('/api/v1/hotels', name: 'api_v1_hotels_index', methods: ['GET'])]
-    public function index(): JsonResponse
+    public function __invoke(): JsonResponse
     {
         $hotels = $this->allHotelsFinder->execute();
         $data = [];
