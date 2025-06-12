@@ -39,3 +39,5 @@ RUN mkdir -p /appdata/www
 COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 WORKDIR /appdata/www
+
+RUN chmod -R 777 ./data
