@@ -15,6 +15,7 @@ final class UniqueUsersPerHotelFinder
 
     public function execute(): array
     {
+        $data = [];
         $hotels = $this->hotelRepository->findAll();
         foreach ($hotels as $hotel) {
             $bookings = $this->bookingRepository->findByHotel($hotel->getId());
