@@ -19,7 +19,11 @@ final class CreateBookingController extends AbstractController
     public function __invoke(Request $request): JsonResponse
     {
         $body = json_decode($request->getContent(), true);
-        $this->bookingCreator->execute($body['hotelId'], $body['email'], $body['name'], $body['lastName'], (int)$body['roomsQty']);
-        return $this->json(['message' => 'Booking created successfully']);
+        try {
+            $this->bookingCreator->execute($body['hotelId'], $body['email'], $body['name'], $body['lastName'], (int)$body['roomsQty']);
+            return $this->json(['message' => 'Booking created successfully']);
+        } catch (\Exception $e) {
+            return $this->json(['message' => 'There was an error creating the booking'], 400);
+        }
     }
 }
