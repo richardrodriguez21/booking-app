@@ -158,5 +158,13 @@
         "email": "jhon.doe",
         "name": "Jhon",
         "lastName": "0"
+    },
+    {
+        "id": "01JXK38F336TXEBNMCKRMSPTB1",
+        "hotelId": "01JXGEVEAF1XWV4ARKD0DERFCC",
+        "roomsQty": 4,
+        "email": "jhon.doe",
+        "name": "Jhon",
+        "lastName": "0"
     }
 ]

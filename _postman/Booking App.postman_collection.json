@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "fcb8c570-021f-421e-908f-5b166027e440",
+		"name": "Booking App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44716089",
+		"_collection_link": "https://richardalexanderrodriguezcamacho.postman.co/workspace/Richard-Alexander-Rodriguez-Cam~457cfe94-1219-46cc-8acd-bfda8ba51529/collection/44716089-fcb8c570-021f-421e-908f-5b166027e440?action=share&source=collection_link&creator=44716089"
+	},
+	"item": [
+		{
+			"name": "Get the hotels list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/hotels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"hotels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the hotel info and statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/hotels/01JXGEVEAKZDTDQ9WP4K6TVM3H",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"hotels",
+						"01JXGEVEAKZDTDQ9WP4K6TVM3H"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get unique users per hotel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/statistics/unique-users-per-hotel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"statistics",
+						"unique-users-per-hotel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"hotelId\": \"01JXGEVEAF1XWV4ARKD0DERFCC\",\n    \"email\": \"jhon.doe@test.local\",\n    \"name\": \"Jhon\", \n    \"lastName\": \"Doe\",\n    \"roomsQty\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
