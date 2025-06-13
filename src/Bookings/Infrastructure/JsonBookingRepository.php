@@ -23,6 +23,10 @@ class JsonBookingRepository implements BookingRepository
     {
         $this->filePath = $dataDir . '/bookings.json';
 
+        if(!file_exists($dataDir)) {
+            mkdir($dataDir, 0777, true);
+        }
+
         if (!file_exists($this->filePath)) {
             file_put_contents($this->filePath, json_encode([]));
             $this->build();
