@@ -52,7 +52,7 @@ Only two entities were implemented: **Booking** and **Hotel**.
 A separate User entity was not needed for the test.  
 All user-related data, including the unique identifier (email), is on the Booking entity.
 
-## End points
+## Endpoints
 - http://localhost:8080/api/v1/hotels (GET): Return  the list of Hotels
 - http://localhost:8080/api/v1/hotels/{hotelId} (GET): Return  the hotel basic info and the number of rooms available. 
 - http://localhost:8080/api/v1/statistics/unique-users-per-hotel (GET): Return the list of hotels Ids with the number of total unique users
